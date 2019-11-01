@@ -1,0 +1,6 @@
+name: "Violence"
+navbar:
+  title: "Violence"
+  left:
+    - text: "Home"
+      href: index.html
