@@ -20,6 +20,6 @@ g <- ggplot(
   mapping = aes(x = Assault, y = UrbanPop)
 )
 g <- g + geom_smooth()
-g <- g + geom_point()
+g <- g + geom_col()
 g
 ```
