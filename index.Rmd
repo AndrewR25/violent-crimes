@@ -17,7 +17,7 @@ data$Assault <- as.numeric(data$Assault)
 data$UrbanPop <- as.numeric(data$UrbanPop)
 g <- ggplot(
   data = data, 
-  mapping = aes(x = Assault, y = UrbanPop)
+  mapping = aes(x = Murder, y = UrbanPop)
 )
 g <- g + geom_col()
 g
