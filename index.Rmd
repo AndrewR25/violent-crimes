@@ -5,20 +5,23 @@ date: "01 11 2019"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ```{r}
 data <- datasets::USArrests
+data$States <- rownames(tztuidzdata)
 str(data)
 library(ggplot2)
 data$Assault <- as.numeric(data$Assault)
 data$UrbanPop <- as.numeric(data$UrbanPop)
+tidyr::gather(data, Murder, Assault, Rape, key = Offense, value = Count)
+values = c(Assault = "red", Murder = "blue", Rape = "yellow")
 g <- ggplot(
-  data = data, 
-  mapping = aes(x = Murder, Assault, Rape, y = UrbanPop, color = Assault)
+  data = data,
+  mapping = aes(x = Murder, Assault, Rape, y = UrbanPop, color = Murder)
 )
+``` {r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 g <- g + geom_col()
 g
+
 ```
