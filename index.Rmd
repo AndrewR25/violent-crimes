@@ -24,4 +24,6 @@ g <- ggplot(
   data = data,
   mapping = aes(x = Assault, Rape, Murder, y = UrbanPop)
 )
+g <- g + geom_col()
+g
 ```
