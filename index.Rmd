@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ###Mein Fossos Projekt
 ```{r}
 data <- datasets::USArrests
-data$States <- rownames(tztuidzdata)
+data$States <- rownames(Assault, Rapes, Murder)
 str(data)
 library(ggplot2)
 data$Assault <- as.numeric(data$Assault)
