@@ -22,7 +22,7 @@ values = c(Assault = "yellow", Murder = "red", Rape = "blue")
            
 g <- ggplot(
   data = data,
-  mapping = aes(x = `names<-`(Assault, Rape, Murder), y = UrbanPop)
+  mapping = aes(x = `names<-`(Assault, Murder), y = UrbanPop)
 )
 g <- g + geom_col()
 g
