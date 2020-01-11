@@ -17,12 +17,12 @@ str(data)
 library(ggplot2)
 data$Assault <- as.numeric(data$Assault)
 data$UrbanPop <- as.numeric(data$UrbanPop)
-tidyr::gather(data, Murder, Assault, Rape, value = count)
+tidyr::gather(data, Murder, Assault, Rape,  key = "crimes", value = count)
 values = c(Assault = "yellow", Murder = "red", Rape = "blue")
            
 g <- ggplot(
   data = data,
-  mapping = aes(x = `names<-`(Assault, Murder), y = UrbanPop)
+  mapping = aes(x = "crimes", y = UrbanPop)
 )
 g <- g + geom_col()
 g
